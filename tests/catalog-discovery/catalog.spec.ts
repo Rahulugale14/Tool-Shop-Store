@@ -1,6 +1,16 @@
 import { test, expect } from '../../fixtures/base.fixture';
 import { categoryCases, invalidSearchTerm } from '../../data/catalog.data';
 
+function isSorted<T>(values: T[], compare: (previous: T, current: T) => number): boolean {
+  return (
+    values.length > 1 &&
+    values.slice(1).every((current, index) => {
+      const previous = values[index];
+      return previous !== undefined && compare(previous, current) <= 0;
+    })
+  );
+}
+
 test.describe('Catalog and discovery @catalog @regression', () => {
   test('homepage shows the Toolshop brand, navigation, and product cards @smoke', async ({
     catalogPage,
@@ -50,10 +60,7 @@ test.describe('Catalog and discovery @catalog @regression', () => {
     await expect
       .poll(async () => {
         const names = await catalogPage.productNames();
-        return (
-          names.length > 1 &&
-          names.every((name, index) => index === 0 || names[index - 1].localeCompare(name) <= 0)
-        );
+        return isSorted(names, (previous, current) => previous.localeCompare(current));
       })
       .toBeTruthy();
   });
@@ -65,10 +72,7 @@ test.describe('Catalog and discovery @catalog @regression', () => {
     await expect
       .poll(async () => {
         const names = await catalogPage.productNames();
-        return (
-          names.length > 1 &&
-          names.every((name, index) => index === 0 || names[index - 1].localeCompare(name) >= 0)
-        );
+        return isSorted(names, (previous, current) => current.localeCompare(previous));
       })
       .toBeTruthy();
   });
@@ -83,7 +87,7 @@ test.describe('Catalog and discovery @catalog @regression', () => {
         return (
           prices.length > 1 &&
           prices.every(Number.isFinite) &&
-          prices.every((price, index) => index === 0 || prices[index - 1] <= price)
+          isSorted(prices, (previous, current) => previous - current)
         );
       })
       .toBeTruthy();
@@ -99,7 +103,7 @@ test.describe('Catalog and discovery @catalog @regression', () => {
         return (
           prices.length > 1 &&
           prices.every(Number.isFinite) &&
-          prices.every((price, index) => index === 0 || prices[index - 1] >= price)
+          isSorted(prices, (previous, current) => current - previous)
         );
       })
       .toBeTruthy();

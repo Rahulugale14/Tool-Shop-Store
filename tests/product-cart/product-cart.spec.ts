@@ -41,7 +41,7 @@ test.describe('Product details and cart @cart @regression', () => {
     await expect(cartPage.totalText).toBeVisible();
   });
 
-  test('cart quantity changes recalculate the visible subtotal', async ({ productPage, cartPage, page }) => {
+  test('cart quantity changes recalculate the visible subtotal', async ({ productPage, cartPage }) => {
     await productPage.gotoProductByName('Combination Pliers');
     await productPage.addToCart();
     await cartPage.goto();

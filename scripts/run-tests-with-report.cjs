@@ -10,11 +10,7 @@ const options = {
 
 rmSync(path.join(process.cwd(), 'allure-results'), { force: true, recursive: true });
 
-const testResult = spawnSync(
-  npmCommand,
-  ['run', 'test:playwright', '--', ...process.argv.slice(2)],
-  options,
-);
+const testResult = spawnSync(npmCommand, ['run', 'test:playwright', '--', ...process.argv.slice(2)], options);
 if (testResult.error) {
   console.error(`Failed to run Playwright: ${testResult.error.message}`);
 }

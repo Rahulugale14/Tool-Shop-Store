@@ -4,9 +4,7 @@ import { env } from '../../config/env';
 test.describe('Checkout, contact, and legal flows @e2e @regression', () => {
   test('checkout starts with the cart stage and retains the selected item', async ({
     productPage,
-    checkoutPage,
     cartPage,
-    page,
   }) => {
     await productPage.goto('/product/01M4Q7QNHWTJRNQASMEY64XQVY');
     await productPage.gotoProductByName('Combination Pliers');

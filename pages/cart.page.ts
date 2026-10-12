@@ -14,7 +14,10 @@ export class CartPage {
     this.cartStep = page.getByRole('listitem').filter({ hasText: /Cart\s*1/ });
     this.productRows = page.getByRole('row');
     this.quantityInput = page.getByRole('spinbutton');
-    this.totalText = page.getByRole('row').filter({ hasText: /^Total\b/i }).last();
+    this.totalText = page
+      .getByRole('row')
+      .filter({ hasText: /^Total\b/i })
+      .last();
     this.removeButtons = page.locator('table a.btn-danger');
     this.emptyState = page.getByText(/cart is empty|empty cart|no items/i);
   }
