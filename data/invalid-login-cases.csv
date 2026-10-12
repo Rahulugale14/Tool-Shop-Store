@@ -1,0 +1,11 @@
+case_id,email,password,expected_outcome
+invalid-login-001,ddt-user-001@example.invalid,NotARealPassword-7xQ!,rejected
+invalid-login-002,ddt-user-002@example.invalid,FakeLogin-4mZ#92,rejected
+invalid-login-003,ddt-user-003@example.invalid,RandomPass-8Lp$31,rejected
+invalid-login-004,ddt-user-004@example.invalid,SampleOnly-2Vn!84,rejected
+invalid-login-005,ddt-user-005@example.invalid,NotAUser-6cR@17,rejected
+invalid-login-006,ddt-user-006@example.invalid,FixturePass-9Kw%42,rejected
+invalid-login-007,ddt-user-007@example.invalid,ExampleOnly-3Hd&65,rejected
+invalid-login-008,ddt-user-008@example.invalid,NoAccount-5Jp*28,rejected
+invalid-login-009,ddt-user-009@example.invalid,TestFixture-1Bx!93,rejected
+invalid-login-010,ddt-user-010@example.invalid,InvalidUser-8Ft#56,rejected

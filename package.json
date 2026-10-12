@@ -1,0 +1,38 @@
+{
+  "name": "tool-shop-ui-framework",
+  "version": "1.0.0",
+  "description": "UI-only Playwright test framework for the Practice Software Testing Toolshop demo",
+  "scripts": {
+    "test": "node scripts/run-tests-with-report.cjs",
+    "test:playwright": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "node scripts/run-tests-with-report.cjs --grep @regression --grep-invert @smoke",
+    "test:headed": "node scripts/run-tests-with-report.cjs --headed",
+    "test:ui": "node scripts/run-tests-with-report.cjs --ui",
+    "test:chromium": "node scripts/run-tests-with-report.cjs --project=chromium",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"config/**/*.ts\" \"components/**/*.ts\" \"pages/**/*.ts\" \"fixtures/**/*.ts\" \"helpers/**/*.ts\" \"data/**/*.ts\" \"tests/**/*.ts\" \"scripts/**/*.cjs\" playwright.config.ts package.json tsconfig.json eslint.config.mjs .prettierrc.json README.md \"docs/**/*.md\"",
+    "format:check": "prettier --check \"config/**/*.ts\" \"components/**/*.ts\" \"pages/**/*.ts\" \"fixtures/**/*.ts\" \"helpers/**/*.ts\" \"data/**/*.ts\" \"tests/**/*.ts\" \"scripts/**/*.cjs\" playwright.config.ts package.json tsconfig.json eslint.config.mjs .prettierrc.json README.md \"docs/**/*.md\"",
+    "report:allure": "allure generate allure-results --clean -o allure-report"
+  },
+  "keywords": [
+    "playwright",
+    "e2e",
+    "toolshop"
+  ],
+  "type": "commonjs",
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.64.0",
+    "@types/node": "26.6.5",
+    "allure-commandline": "2.46.1",
+    "allure-playwright": "3.13.0",
+    "dotenv": "18.0.7",
+    "eslint": "10.12.0",
+    "prettier": "3.9.10",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.71.1"
+  }
+}

@@ -1,0 +1,30 @@
+- generic [ref=e2] [box=0,0,1265,2020]:
+  - generic [ref=e3] [box=0,0,1265,40]:
+    - text: View the
+    - link "Documentation" [ref=e4] [cursor=pointer] [box=541,9,110,21]:
+      - /url: https://testsmith-io.github.io/practice-software-testing/#/
+    - text: for this application.
+  - generic [ref=e5] [box=0,40,1265,133]:
+    - generic [ref=e7] [box=63,50,1140,32]:
+      - generic [ref=e8] [box=366,55,262,21]: Practice Black Box Testing & Bug Hunting
+      - button "Testing Guide" [ref=e9] [cursor=pointer] [box=643,50,112,32]
+      - button "🐛 Bug Hunting" [ref=e10] [cursor=pointer] [box=771,50,129,32]
+    - navigation [ref=e11] [box=0,92,1265,81]:
+      - generic [ref=e12] [box=63,100,1140,65]
+  - generic [ref=e88] [box=75,197,1116,1613]:
+    - generic [ref=e89] [box=75,197,1116,338]:
+      - paragraph [ref=e90] [box=75,197,1116,231]
+      - separator [ref=e92] [box=75,452,1116,1]
+      - generic [ref=e93] [box=75,477,1116,58]
+    - generic [ref=e97] [box=63,559,1140,1251]:
+      - generic [ref=e98] [box=63,559,285,1235]
+      - generic [ref=e227] [box=348,559,855,1251]
+  - contentinfo [ref=e48] [box=0,1834,1265,186]:
+    - generic [ref=e50] [box=63,1851,1140,88]:
+      - generic [ref=e51] [box=75,1851,1116,17]: Learn & Explore
+      - generic [ref=e52] [box=67,1860,1132,79]
+    - generic [ref=e71] [box=0,1956,1265,64]:
+      - generic [ref=e72] [box=12,1964,1241,24]
+      - generic [ref=e76] [box=12,1988,1241,24]: v2.5 | Built 2026-10-10 | Angular 20.0.5
+  - button "Open chat" [ref=e78] [cursor=pointer] [box=1189,644,56,56]
+  - button "Show live shop activity" [ref=e82] [cursor=pointer] [box=20,644,56,56]
